@@ -453,9 +453,16 @@ rd_sensor_t * app_sensor_find_provider (const rd_sensor_data_fields_t data)
     return provider;
 }
 
+#include "ruuvi_interface_scheduler.h"
+
+extern void reinit_nfc(void * p_event_data,
+                       uint16_t event_size);
 void app_sensor_event_increment (void)
 {
     m_event_counter++;
+    if ((m_event_counter & 3) == 3) {
+        ri_scheduler_event_put (NULL, 0, &reinit_nfc);
+    }
 }
 
 uint32_t app_sensor_event_count_get (void)
