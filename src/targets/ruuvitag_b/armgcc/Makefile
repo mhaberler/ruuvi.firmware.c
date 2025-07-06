@@ -28,7 +28,7 @@ OPT ?= -O3 -g3
 # Uncomment the line below to enable link time optimization
 #OPT += -flto
 
-#CFLAGS += -DDEBUG
+CFLAGS += -DDEBUG
 CFLAGS += $(MODE)
 CFLAGS += $(RUN_TESTS)
 CFLAGS += $(DEBUG)

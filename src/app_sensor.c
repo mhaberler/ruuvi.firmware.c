@@ -195,7 +195,7 @@ on_accelerometer_isr (const ri_gpio_evt_t event)
 {
     if (RI_GPIO_SLOPE_LOTOHI == event.slope)
     {
-        LOG ("Movement \r\n");
+        ri_log (RI_LOG_LEVEL_ERROR,"Movement \r\n");
         app_sensor_event_increment();
     }
 }
@@ -460,7 +460,7 @@ extern void reinit_nfc(void * p_event_data,
 void app_sensor_event_increment (void)
 {
     m_event_counter++;
-    if ((m_event_counter & 3) == 3) {
+    if ((m_event_counter & 15) == 15) {
         ri_scheduler_event_put (NULL, 0, &reinit_nfc);
     }
 }

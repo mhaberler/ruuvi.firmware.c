@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "ruuvi_interface_scheduler.h": "c",
+        "ruuvi_interface_communication.h": "c",
+        "ruuvi_task_nfc.h": "c",
+        "ruuvi_driver_error.h": "c"
+    },
+    "idf.pythonInstallPath": "/opt/homebrew/opt/python@3.13/libexec/bin/python"
+}

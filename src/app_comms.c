@@ -721,7 +721,7 @@ rd_status_t app_comms_blocking_send (const ri_comm_xfer_fp_t reply_fp,
 // Actual NFC reinit in main context
 void reinit_nfc(void * p_event_data,
                 uint16_t event_size) {
-    ri_log (RI_LOG_LEVEL_INFO, "-- reinit_nfc \r\n");
+    ri_log (RI_LOG_LEVEL_ERROR, "--- reinit_nfc \r\n");
     rd_status_t err_code = 0;
     // Container for NFC data
     ri_comm_dis_init_t dis = {0};
